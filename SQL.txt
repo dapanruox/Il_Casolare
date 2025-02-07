@@ -1,0 +1,90 @@
+CREATE TABLE Utilisateur(
+   Id_utilisateur INT AUTO_INCREMENT,
+   Admin BOOLEAN,
+   Nom VARCHAR(50),
+   Mot_de_passe VARCHAR(50),
+   Mail VARCHAR(50),
+   PRIMARY KEY(Id_utilisateur)
+);
+
+CREATE TABLE Table_Res(
+   Numero INT AUTO_INCREMENT,
+   Table_interieur BOOLEAN,
+   Statut VARCHAR(50),
+   PRIMARY KEY(Numero)
+);
+
+CREATE TABLE Plat(
+   Id_plat INT AUTO_INCREMENT,
+   Nom VARCHAR(50),
+   Prix INT,
+   PRIMARY KEY(Id_plat)
+);
+
+CREATE TABLE Ingredient(
+   Id_ingredient INT AUTO_INCREMENT,
+   Nom VARCHAR(50),
+   PRIMARY KEY(Id_ingredient)
+);
+
+CREATE TABLE Horaire(
+   Id_horaire INT AUTO_INCREMENT,
+   Jour VARCHAR(50),
+   Heure_ouverture TIME,
+   Heure_fermeture TIME,
+   Type_service VARCHAR(50),
+   PRIMARY KEY(Id_horaire)
+);
+
+CREATE TABLE Restaurant(
+   Id_restaurant INT AUTO_INCREMENT,
+   Lieu VARCHAR(50),
+   Nombre_tables_dispo INT,
+   PRIMARY KEY(Id_restaurant)
+);
+
+CREATE TABLE Il_casolare(
+   Id INT AUTO_INCREMENT,
+   Id_utilisateur INT NOT NULL,
+   Id_restaurant INT NOT NULL,
+   PRIMARY KEY(Id),
+   FOREIGN KEY(Id_utilisateur) REFERENCES Utilisateur(Id_utilisateur),
+   FOREIGN KEY(Id_restaurant) REFERENCES Restaurant(Id_restaurant)
+);
+
+CREATE TABLE RESERVER(
+   Id_reservation INT AUTO_INCREMENT,
+   Id_utilisateur INT NOT NULL,
+   Nombre_personnes INT,
+   Date_heure DATETIME,
+   Id_restaurant INT NOT NULL,
+   Numero INT NOT NULL,
+   PRIMARY KEY(Id_reservation),
+   FOREIGN KEY(Id_utilisateur) REFERENCES Utilisateur(Id_utilisateur),
+   FOREIGN KEY(Id_restaurant) REFERENCES Restaurant(Id_restaurant),
+   FOREIGN KEY(Numero) REFERENCES Table_Res(Numero)
+);
+
+CREATE TABLE CONCEVOIR(
+   Id_restaurant INT NOT NULL,
+   Id_plat INT NOT NULL,
+   PRIMARY KEY(Id_restaurant, Id_plat),
+   FOREIGN KEY(Id_restaurant) REFERENCES Restaurant(Id_restaurant),
+   FOREIGN KEY(Id_plat) REFERENCES Plat(Id_plat)
+);
+
+CREATE TABLE COMPOSER(
+   Id_plat INT NOT NULL,
+   Id_ingredient INT NOT NULL,
+   PRIMARY KEY(Id_plat, Id_ingredient),
+   FOREIGN KEY(Id_plat) REFERENCES Plat(Id_plat),
+   FOREIGN KEY(Id_ingredient) REFERENCES Ingredient(Id_ingredient)
+);
+
+CREATE TABLE DISPOSER(
+   Id_restaurant INT NOT NULL,
+   Id_horaire INT NOT NULL,
+   PRIMARY KEY(Id_restaurant, Id_horaire),
+   FOREIGN KEY(Id_restaurant) REFERENCES Restaurant(Id_restaurant),
+   FOREIGN KEY(Id_horaire) REFERENCES Horaire(Id_horaire)
+);
