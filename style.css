@@ -1,0 +1,55 @@
+header {
+    display: flex;
+    border-bottom: solid 1px grey;
+}
+
+.title {
+    display: flex;
+    justify-content: flex-start;
+    padding: 15px;
+    font-family: "Dancing Script", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.connexion {
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+    padding-right: 10px;
+    padding-left: 1080px;
+}
+
+.deconnexion {
+    display: flex;
+    justify-content: end;
+    padding-top: 40px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+
+}
+
+.navbar:hover {
+    background-color: lightcyan;
+}
+
+header:hover {
+    background-color: lightgrey;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    color: grey;
+    border-top: solid 1px grey;
+}
+
+.liens {
+    display: flex;
+    margin-top: 16px;
+}
