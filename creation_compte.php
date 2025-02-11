@@ -40,7 +40,7 @@
     
             <section id="creation">
                 <h2>Création de Compte</h2>
-                <form action="connexionDB.php" method="post">
+                <form action="connexion.php" method="post">
                     <label>Email :</label>
                     <input name="email" required>
                     
