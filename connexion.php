@@ -14,11 +14,11 @@ catch(Exception $e)
     die('Erreur : ' . $e->getMessage());
 }
 
-$connex = "SELECT COUNT(*) FROM utilisateur WHERE (Nom = :username AND Mot_de_passe = :motpasse)";
+$connex = "SELECT COUNT(*) FROM utilisateur WHERE (Nom = :username AND Mot_de_passe = :mdp)";
 $connexPrep = $db->prepare($connex);
 $connexPrep->execute([
-    'Nom' => $_POST['username'],
-    'Mot_de_passe' => $_POST['motpasse']
+    'username' => $_POST['username'],
+    'mdp' => $_POST['mdp']
 ]);
 $foncfinal = $connexPrep->fetchColumn();
 
