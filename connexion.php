@@ -3,7 +3,7 @@
 try
 {
     $db = new PDO(
-        'mysql:host=localhost;dbname=budgetonportefeuille;charset=utf8',
+        'mysql:host=localhost;dbname=il_casolare;charset=utf8',
         'root',
         '',
         [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION],
@@ -14,7 +14,7 @@ catch(Exception $e)
     die('Erreur : ' . $e->getMessage());
 }
 
-$connex = "SELECT COUNT(*) FROM user WHERE (username = :username AND motpasse = :motpasse)";
+$connex = "SELECT COUNT(*) FROM utilisateur WHERE (Nom = :username AND Mot_de_passe = :motpasse)";
 $connexPrep = $db->prepare($connex);
 $connexPrep->execute([
     'username' => $_POST['username'],
