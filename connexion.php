@@ -17,8 +17,8 @@ catch(Exception $e)
 $connex = "SELECT COUNT(*) FROM utilisateur WHERE (Nom = :username AND Mot_de_passe = :motpasse)";
 $connexPrep = $db->prepare($connex);
 $connexPrep->execute([
-    'username' => $_POST['username'],
-    'motpasse' => $_POST['motpasse']
+    'Nom' => $_POST['username'],
+    'Mot_de_passe' => $_POST['motpasse']
 ]);
 $foncfinal = $connexPrep->fetchColumn();
 
