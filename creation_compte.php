@@ -48,7 +48,7 @@
                     <input name="username" required>
                     
                     <label>Mot de passe :</label>
-                    <input name="mdp" class ="mpd" required>
+                    <input type="password" name="mdp" class ="mpd" required>
                     
                     <button type="submit">Créez le compte</button>
                 </form>
