@@ -27,9 +27,9 @@ else{
     $insertRequete = $db->prepare($sqlQuery);
 
     $insertRequete->execute([
-        'username' => $_POST['username'] ,
-        'email' => $_POST['email'],
-        'motpasse' => $_POST['motpasse']
+        'Nom' => $_POST['username'] ,
+        'Email' => $_POST['email'],
+        'Mot_de_passe' => $_POST['motpasse']
     ]);
 
     echo("Inscription réussie");
