@@ -29,7 +29,7 @@ else{
     $insertRequete->execute([
         'username' => $_POST['username'] ,
         'email' => $_POST['email'],
-        'motpasse' => $_POST['motpasse']
+        'mdp' => $_POST['motpasse']
     ]);
 
     echo("Inscription réussie");
