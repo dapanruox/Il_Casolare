@@ -41,14 +41,14 @@
             <section id="creation">
                 <h2>Création de Compte</h2>
                 <form action="connexion.php" method="post">
-                    <label>Email :</label>
-                    <input name="email" required>
+                    <label for="email">Email :</label>
+                    <input type="email" id="email" name="email" required>
                     
-                    <label>Nom d'utilisateur :</label>
-                    <input name="username" required>
+                    <label for="username">Nom d'utilisateur :</label>
+                    <input type="text" id="username" name="username" required>
                     
-                    <label>Mot de passe :</label>
-                    <input type="password" name="mdp" class ="mpd" required>
+                    <label for="mdp">Mot de passe :</label>
+                    <input type="password" id="mdp" name="mdp" class ="mdp" required>
                     
                     <button type="submit">Créez le compte</button>
                 </form>
