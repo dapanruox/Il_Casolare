@@ -13,7 +13,7 @@ catch(Exception $e)
     die('Erreur : ' . $e->getMessage());
 }
 
-$checkEmail = "SELECT COUNT(*) FROM utilisateur WHERE Email = :email";
+$checkEmail = "SELECT COUNT(*) FROM utilisateur WHERE Mail = :email";
 $prepCheck = $db->prepare($checkEmail);
 $prepCheck->execute(['email' => $_POST['email']]);   
 $foncfinal = $prepCheck->fetchColumn();
@@ -27,9 +27,9 @@ else{
     $insertRequete = $db->prepare($sqlQuery);
 
     $insertRequete->execute([
-        'Nom' => $_POST['username'] ,
-        'Email' => $_POST['email'],
-        'Mot_de_passe' => $_POST['motpasse']
+        'username' => $_POST['username'] ,
+        'email' => $_POST['email'],
+        'motpasse' => $_POST['motpasse']
     ]);
 
     echo("Inscription réussie");
