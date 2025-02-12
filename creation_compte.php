@@ -49,6 +49,9 @@
                     
                     <label for="mdp">Mot de passe :</label>
                     <input type="password" id="mdp" name="mdp" class ="mdp" required>
+
+                    <label for="tel">Téléphone</label>
+                    <input type="tel" id="tel" name="tel" required>
                     
                     <button type="submit">Créez le compte</button>
                 </form>
