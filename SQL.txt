@@ -4,6 +4,7 @@ CREATE TABLE Utilisateur(
    Nom VARCHAR(50),
    Mot_de_passe VARCHAR(50),
    Mail VARCHAR(50),
+   Num_Telephone INT,
    PRIMARY KEY(Id_utilisateur)
 );
 
@@ -11,6 +12,7 @@ CREATE TABLE Table_Res(
    Numero INT AUTO_INCREMENT,
    Table_interieur BOOLEAN,
    Statut VARCHAR(50),
+   Nb_places_max INT,
    PRIMARY KEY(Numero)
 );
 
