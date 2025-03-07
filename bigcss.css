@@ -10,6 +10,10 @@ body {
     justify-content: center;
 }
 
+h2, h1 {
+    color: gold;
+}
+
 .pizza {
     display: flex;
     justify-content: left;
