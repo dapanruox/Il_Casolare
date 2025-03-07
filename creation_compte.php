@@ -26,12 +26,12 @@
         <div class="flex_connexion">
             <section id="connexion">
                 <h2>Connexion</h2>
-                <form action="connexion.php">
+                <form action="connexion.php" method="post">
                     <label for="username">Nom d'utilisateur :</label>
                     <input type="text" id="username" name="username" required>
                     
                     <label for="mdp">Mot de passe :</label>
-                    <input type="password" id="mdp" name="mdp" class = "mdp" required>
+                    <input type="password" id="mdp" name="mdp" required>
                     
                     <button class = "button_connexion" type="submit">Connexion</button>
                     <button class = "button_creer" type="submit">Créer un compte</button>
@@ -48,7 +48,7 @@
                     <input type="text" id="username" name="username" required>
                     
                     <label for="mdp">Mot de passe :</label>
-                    <input type="password" id="mdp" name="mdp" class ="mdp" required>
+                    <input type="password" id="mdp" name="mdp" required>
 
                     <label for="tel">Téléphone</label>
                     <input type="tel" id="tel" name="tel" required>
