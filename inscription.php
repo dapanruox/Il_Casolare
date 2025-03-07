@@ -34,7 +34,12 @@ else{
         'mdp' => $mdp_hash
     ]);
 
-    echo("Inscription réussie");
+    $_SESSION['user_id'] = $user['Id_utilisateur'];  
+    $_SESSION['username'] = $user['Nom'];           
+    $_SESSION['admin'] = $user['Admin'];   
+
+    header("Location: accueil.php");
+    exit();
 }
 
 
