@@ -1,0 +1,56 @@
+.header {
+    display: flex;
+    flex-direction: column; /* Empile les éléments en colonne */
+    align-items: flex-start; /* Alignement à gauche */
+    padding-left: 30px;
+    margin-top: 20px;
+}
+
+body{
+    background-color: rgb(23, 22, 22);
+}
+
+.nom {
+    padding-bottom: 110px;
+    color:rgba(215, 194, 87, 0.981);
+    font-family: "Dancing Script", serif;
+    font-size: 3.9em;
+    font-weight: 700;
+  font-style: normal;
+}
+
+.liens{
+    padding-left: 747px;
+    font-size: 1.5em;
+    margin-top: -1090px;
+    
+  }
+  
+  a{
+    text-decoration: none;
+  }
+
+  .texte{
+    margin-left: 30px;
+    color: white;
+    margin-top: 50px;
+    font-size :3.5em;
+  }
+  
+  .restau{
+    width: 600px;
+    margin-right: 500px;
+    border: 2px solid rgba(215, 194, 87, 0.981);
+    margin-left: 30px;
+    
+  }
+
+  .txt{
+    font-family: "Reenie Beanie", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 32px;
+    padding-right: 120px;
+    margin-top: -30px;
+    color: white;
+  }
