@@ -1,0 +1,134 @@
+@import url("style.css");
+
+body {
+    background-color: rgb(23, 22, 22);
+    color: white;
+}
+
+.bigMenu {
+    display: flex;
+    justify-content: center;
+}
+
+.pizza {
+    display: flex;
+    justify-content: left;
+}
+
+.premiere_pizza {
+    border: solid grey 1px;
+    padding-left: 20px;
+    padding-top: 10px;
+    
+}
+
+.deuxieme_pizza {
+    border: solid grey 1px;
+    padding-left: 20px;
+    padding-top: 10px;
+}
+
+.troisieme_pizza {
+    border: solid grey 1px;
+    padding-left: 20px;
+    padding-top: 10px;
+}
+
+.quatrieme_pizza {
+    border: solid grey 1px;
+    padding-left: 20px;
+    padding-top: 10px;
+}
+
+.cinquieme_pizza {
+    border: solid grey 1px;
+    padding-left: 20px;
+    padding-top: 10px;
+}
+
+h3 {
+    display: flex;
+    justify-content: center;
+    font-family: "Dancing Script", serif;
+    font-optical-sizing: auto;
+    font-weight: 500px;
+    font-style: normal;
+    font-size: 1.4em;
+    padding-right: 20px;
+    text-decoration: underline;
+}
+
+.entree {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.premiere_entree {
+    border: solid grey 1px;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-right: 20px;
+}
+
+.deuxieme_entree {
+    border: solid grey 1px;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-right: 20px;
+}
+
+.troisieme_entree {
+    border: solid grey 1px;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-right: 20px;
+}
+
+.pates {
+    display: flex;
+    justify-content: center;
+}
+
+.pates_un {
+    border: solid grey 1px;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-right: 20px;
+}
+.pates_deux {
+    border: solid grey 1px;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-right: 20px;
+}
+.pates_trois {
+    border: solid grey 1px;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-right: 20px;
+}
+.pates_quatre {
+    border: solid grey 1px;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-right: 20px;
+}
+
+.desserts {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.tiramisu {
+    border: solid grey 1px;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-right: 20px;
+}
+
+.glaces {
+    border: solid grey 1px;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-right: 20px;
+}
