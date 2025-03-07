@@ -5,6 +5,14 @@ body {
     color: white;
 }
 
+
+.liens{
+  padding-left: 750px;
+  font-size: 1.5em;
+  margin-top: -80px;
+  
+}
+
 .bigMenu {
     display: flex;
     justify-content: center;
