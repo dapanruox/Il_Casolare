@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 try
 {
@@ -14,16 +15,20 @@ catch(Exception $e)
     die('Erreur : ' . $e->getMessage());
 }
 
-$connex = "SELECT COUNT(*) FROM utilisateur WHERE (Nom = :username AND Mot_de_passe = :mdp)";
+$connex = "SELECT * FROM utilisateur WHERE (Nom = :username)";
 $connexPrep = $db->prepare($connex);
 $connexPrep->execute([
-    'username' => $_POST['username'],
-    'mdp' => $_POST['mdp']
-]);
-$foncfinal = $connexPrep->fetchColumn();
+    'username' => $_POST['username'] ]);
+$user = $connexPrep->fetch(PDO::FETCH_ASSOC);
 
-if($foncfinal){
-    echo("Vous êtes connecté ! :)");
+if(password_verify($_POST['mdp'], $user['Mot_de_passe'])){
+    $_SESSION['user_id'] = $user['Id_utilisateur'];  
+    $_SESSION['username'] = $user['Nom'];           
+    $_SESSION['admin'] = $user['Admin'];            
+ 
+
+    header("Location: accueil.php");
+    exit();
 }else{
     echo("Votre nom d'utilisateur ou mot de passe est erronné");
 }
