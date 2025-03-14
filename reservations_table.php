@@ -21,8 +21,8 @@
     <main class = "main-content">
         <div class="container">
             <h2>Limoges</h2>
-            <p class="address">Carrefour Nexon, 10 Avenue de l'abattoir, 87000 LIMOGES</p>
-            <p class="phone">📞 <a href="tel:+33557072292">+33 5 55 70 22 92</a></p>
+            <p class="address">Groupe 3iL, 43 Rue de Sainte-Anne, 87000 LIMOGES</p>
+            <p class="phone">📞 <a href="tel:+33698193659">+33 6 98 19 36 59</a></p>
 
             <div class="buttons">
                 <a href="#" class="btn">📍 Itinéraire</a>
@@ -86,34 +86,8 @@
             </form>
         </section>
 
-        <script>
-            function updateTimeSlots() {
-                const timeSelect = document.getElementById("time");
-                const dateInput = document.getElementById("date").value;
-                const dayOfWeek = new Date(dateInput).getDay();
-
-                const horaires = {
-                    1: ["11:30", "12:00", "12:30", "13:00", "18:30", "19:00", "19:30", "20:00"], // Lundi
-                    2: ["11:30", "12:00", "12:30", "13:00", "18:30", "19:00", "19:30", "20:00"], // Mardi
-                    3: ["11:30", "12:00", "12:30", "13:00", "18:30", "19:00", "19:30", "20:00"], // Mercredi
-                    4: ["11:30", "12:00", "12:30", "13:00", "18:30", "19:00", "19:30", "20:00"], // Jeudi
-                    5: ["11:30", "12:00", "12:30", "13:00", "18:30", "19:00", "19:30", "20:00"], // Vendredi
-                    6: ["11:30", "12:00", "12:30", "13:00", "18:30", "19:00", "19:30", "20:30"], // Samedi
-                    0: ["11:30", "12:00", "12:30", "13:00", "18:30", "19:00", "19:30", "20:30"]  // Dimanche
-                };
-
-                timeSelect.innerHTML = '<option value="">Sélectionnez une heure</option>';
-                if (horaires[dayOfWeek]) {
-                    horaires[dayOfWeek].forEach(time => {
-                        let option = document.createElement("option");
-                        option.value = time;
-                        option.textContent = time;
-                        timeSelect.appendChild(option);
-                    });
-                }
-            }
-        </script>
-
+        
+        <script src="assets/js/script_creation_table.js"></script>
     </main>
 
 </body>
