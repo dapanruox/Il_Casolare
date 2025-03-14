@@ -4,17 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connexion - il Casolare</title>
-    <link rel="stylesheet" href="assets/CSS/style_connexion.css">
+    <link rel="stylesheet" href="style_connexion.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <div class = "flex1">
             <div class = "flex2">
                 <h1><strong>Il Casolare</strong></h1>
-                <h2>Page de connexion | Création de compte</h2>
+                <h2>Page de connexion |  Création de compte</h2>
             </div>
         </div>
-
+        <div class="liens">
+            <a href="a" style="color: white;" >Accueil</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="b" style="color: white;">A propos</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="c" style="color: white;">Menu</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="d" style="color: white; font-weight: 900; text-decoration: underline;">Connexion</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="e" style="color: white;">Réserver</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="f" style="color: white;">Admin</a>
+      
+          </div>
         <nav> 
 
         </nav>
@@ -25,7 +36,7 @@
     <main>
         <div class="flex_connexion">
             <section id="connexion">
-                <h2>Connexion</h2>
+                <h3>Connexion</h3>
                 <form action="connexion.php" method="post">
                     <label for="username">Nom d'utilisateur :</label>
                     <input type="text" id="username" name="username" required>
