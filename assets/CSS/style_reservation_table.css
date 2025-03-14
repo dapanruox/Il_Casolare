@@ -1,0 +1,178 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1a1a1a;
+    color: #fff;
+    margin: 0;
+    padding: 20px;
+}
+
+.main-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1000px; /* Ajuste selon ton besoin */
+    margin: 0 auto;
+}
+
+.container {
+    width: 500px; /* Ajuste la largeur */
+    margin-right: 45px;
+    background: #222;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.address, .phone {
+    font-size: 14px;
+    color: #bbb;
+}
+
+.phone a {
+    color: #52a8ec;
+    text-decoration: none;
+}
+
+.buttons {
+    margin-top: 15px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px;
+    margin-right: 10px;
+    font-size: 14px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.itinerary {
+    background-color: #ff8c00;
+    color: black;
+}
+
+.order {
+    background-color: #d32f2f;
+    color: white;
+}
+
+.menu-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+    background: none;
+    border: 1px solid #aaa;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.status {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.open {
+    color: #3eea7c;
+}
+
+.toggle-buttons {
+    margin-top: 10px;
+}
+
+.toggle {
+    padding: 8px 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 5px;
+    background: none;
+    color: white;
+    border: 1px solid white;
+    margin-right: 5px;
+}
+
+.toggle.active {
+    background-color: #3eea7c;
+    color: black;
+}
+
+.schedule {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.schedule p {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+}
+
+.highlight {
+    color: #3eea7c;
+}
+
+.reservation-form {
+    width: 700px;
+    margin: 0; /* Supprime le margin auto qui le centre */
+    text-align: left;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h2 {
+    color: #b22222;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border 0.3s ease-in-out;
+}
+
+input:focus, select:focus {
+    border-color: #b22222;
+    outline: none;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #b22222;
+    color: white;
+    border: none;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background-color: #8b1a1a;
+}
