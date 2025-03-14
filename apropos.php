@@ -1,4 +1,4 @@
-<!doctype html>
+i<!doctype html>
 <html lang="fr">
 <head>
   <meta charset="utf-8">
@@ -22,7 +22,7 @@
       <a href="accueil.php" style="color: white;" >Accueil</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <a href="apropos.php" style="color: white; font-weight: 900; text-decoration: underline;">A propos</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <a href="menus.hphp" style="color: white;">Menus</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <a href="d" style="color: white;">Contact</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="d" style="color: white;">Connexion</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <a href="e" style="color: white;">Réserver</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <a href="f" style="color: white;">Admin</a>
 
