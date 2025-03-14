@@ -24,7 +24,7 @@ i<!doctype html>
       <a href="menus.php" style="color: white;">Menus</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <a href="d" style="color: white;">Connexion</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <a href="e" style="color: white;">Réserver</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <a href="f" style="color: white;">Admin</a>
+      <a href="verif_admin.php" style="color: white;">Admin</a>
 
 
       <div class="texte">
