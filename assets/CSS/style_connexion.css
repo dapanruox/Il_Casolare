@@ -47,6 +47,7 @@ h1 {
     color: white;
     border: 2px solid rgba(215, 194, 87, 0.981);
     box-sizing: border-box;
+   
 
 }
 
@@ -86,6 +87,7 @@ input {
     margin-bottom: 15px;
     padding: 10px;
     font-size: 1em;
+    background-color:  rgb(23, 22, 22);
     color:white;
 }
 
@@ -117,10 +119,6 @@ button:hover {
 @media (min-width: 320px) and (max-width: 720px) {
 }
 
-* {
- background-color: rgb(23, 22, 22);
-
-}
 
 
 .liens{
@@ -149,3 +147,13 @@ button:hover {
     font-weight: 700;
   font-style: normal;
   }
+
+body{
+    background-color:  rgb(23, 22, 22);
+    background-image: url(images/cercle.png);
+    background-repeat: no-repeat;
+    background-size: 20%;
+    background-position: 10px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
