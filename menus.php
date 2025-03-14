@@ -45,14 +45,14 @@
         </div>
         <div class="troisieme_entree">
             <img src="images/charcuterie.jpg" alt="Image de charcuterie">
-            <h3>Bruschetta</h3>
+            <h3>Tagliere di salumi</h3>
             <p>
                 <strong> Ingrédients : </strong> Chartuterie
             </p>
         </div>
     </div>
     <h2>Les Plats :</h2>
-    <h3>Nos Pizza :</h3>
+    <h3>Nos Pizzas :</h3>
     <div class="pizza">
         <div class="premiere_pizza">
             <img src="images/vegetarienne.jpg" alt="Image de pizza vegetarienne">
