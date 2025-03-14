@@ -1,14 +1,15 @@
 <?php
-
+session_start();
+require 'connexion.php';
 
 // Vérifier si l'utilisateur est admin
-if (!isset($_SESSION['user_id']) || $_SESSION['Admin'] !== 'admin') {
+if (!isset($_SESSION['user_id']) || $_SESSION['admin'] !== 1) {
     die("Accès interdit !");
 }
 
 // Récupérer les produits
-$sql = "SELECT * FROM produits";
-$result = $conn->query($sql);
+$sql = "SELECT * FROM plat";
+$result = $db->query($sql);
 ?>
 
 <!DOCTYPE html>
