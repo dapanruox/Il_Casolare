@@ -28,6 +28,21 @@
 <div class="b">
       <button class="b1" type="button">Réserver une table</button>
     </div>
+
+
+      <div class="carousel">
+      <div class="carousel-track">
+        <img src="images/pizza.jpeg" alt="pizza" />
+        <img src="images/pates.jpg" alt="pates" />
+        <img src="images/ti.jpeg" alt="tiramisu" />
+        <img src="images/cafe.png" alt="cafe" />
+        
+        <img src="images/pizza.jpeg" alt="pizza" />
+        <img src="images/pates.jpg" alt="pates" />
+        <img src="images/ti.jpeg" alt="tiramisu" />
+        <img src="images/cafe.png" alt="cafe" />
+      </div>
+    </div>
   </body>
   </html>
 </body>
