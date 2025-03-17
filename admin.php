@@ -1,44 +1,39 @@
 <?php
+    session_start();
 
-require 'connexion.php';
+    try {
+        $db = new PDO(
+            'mysql:host=localhost;dbname=il_casolare;charset=utf8',
+            'root',
+            '',
+            [
+                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+            ]
+        );
+    } catch (Exception $e) {
+        die('Erreur : ' . htmlspecialchars($e->getMessage()));
+    }
 
-// Vérifier si l'utilisateur est admin
-if (!isset($_SESSION['user_id']) || $_SESSION['admin'] !== 1) {
-    die("Accès interdit !");
-}
+    if (!isset($_POST['username'], $_POST['mdp'])) {
+        die("Veuillez remplir tous les champs.");
+    }
 
-// Récupérer les produits
-$sql = "SELECT * FROM plat";
-$result = $db->query($sql);
+    $connex = "SELECT * FROM utilisateur WHERE Nom = :username";
+    $connexPrep = $db->prepare($connex);
+    $connexPrep->execute([
+        'username' => $_POST['username']
+    ]);
+
+    $user = $connexPrep->fetch(PDO::FETCH_ASSOC);
+
+    if ($user && password_verify($_POST['mdp'], $user['Mot_de_passe'])) {
+        $_SESSION['user_id'] = $user['Id_utilisateur'];
+        $_SESSION['username'] = $user['Nom'];
+        $_SESSION['admin'] = $user['Admin'];
+
+        header("Location: accueil.php");
+        exit();
+    } else {
+        echo "Votre nom d'utilisateur ou mot de passe est erroné.";
+    }
 ?>
-
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <title>Gestion des Produits</title>
-</head>
-<body>
-    <h1>Modifier les Produits</h1>
-    <table border="1">
-        <tr>
-            <th>ID</th>
-            <th>Nom</th>
-            <th>Prix</th>
-            <th>Description</th>
-            <th>Action</th>
-        </tr>
-        <?php while ($row = $result->fetch_assoc()) : ?>
-            <tr>
-                <td><?= $row['id'] ?></td>
-                <td><?= htmlspecialchars($row['nom']) ?></td>
-                <td><?= $row['prix'] ?> €</td>
-                <td><?= htmlspecialchars($row['description']) ?></td>
-                <td>
-                    <a href="modifier_produit.php?id=<?= $row['id'] ?>">Modifier</a>
-                </td>
-            </tr>
-        <?php endwhile; ?>
-    </table>
-</body>
-</html>
