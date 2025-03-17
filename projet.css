@@ -27,17 +27,14 @@
   border-left: 2px solid rgba(77, 76, 76, 0.8) ;
 }
 
-body{
-  padding-left: 10px;
-  background-color: rgb(23, 22, 22);
+
+body {
   background-image: url(images/a\(1\).jpg);
   background-repeat: no-repeat;
   background-size: 60%;
-  background-position: 620px center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-}
-
+  background-position: 620px -100px;
+  
+  background-color: rgb(23, 22, 22);
 .texte{
   color: white;
   margin-top: 200px;
@@ -75,4 +72,36 @@ a{
 a:hover{
   font-weight: 900;
   text-decoration: underline;
+}
+
+
+
+.carousel {
+  width: 100vw;
+  overflow: hidden;
+  margin-top: 300px;
+}
+
+.carousel-track {
+  display: flex;
+  width: calc(300px * 8); /* 4 images * 2 (doublées pour boucle) */
+  animation: scroll 20s linear infinite;
+}
+
+.carousel-track img {
+  width: 300px;
+  height: auto;
+  margin: 0 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 15px rgba(0,0,0,0.6);
+}
+
+/* Animation */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
