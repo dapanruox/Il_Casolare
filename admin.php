@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 require 'connexion.php';
 
 // Vérifier si l'utilisateur est admin
