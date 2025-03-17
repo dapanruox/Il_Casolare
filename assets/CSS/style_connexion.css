@@ -150,10 +150,9 @@ button:hover {
 
 body{
     background-color:  rgb(23, 22, 22);
-    background-image: url(images/cercle.png);
+    background-image: url(images/cercle.jpg);
     background-repeat: no-repeat;
     background-size: 20%;
     background-position: 10px;
-    background-repeat: no-repeat;
     background-attachment: fixed;
 }
