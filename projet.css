@@ -4,19 +4,9 @@
     box-sizing: border-box;
     
 }
-.nom {
-    display: grid; /* Permet d'aligner le texte au centre */
-    margin-top: 20px;
-    color:rgba(215, 194, 87, 0.981);
-    font-family: "Dancing Script", serif;
-  padding-left: 30px;
-    font-size: 3.9em;
-    font-weight: 700;
-  font-style: normal;
 
  
-  
-}
+
 .page{
   position: relative;
 
@@ -28,6 +18,7 @@
 }
 
 
+
 body {
   background-image: url(images/a\(1\).jpg);
   background-repeat: no-repeat;
@@ -35,6 +26,8 @@ body {
   background-position: right -100px;
   
   background-color: rgb(23, 22, 22);
+  
+}
 .texte{
   color: white;
   margin-top: 200px;
@@ -68,10 +61,21 @@ body {
 a{
   text-decoration: none;
 }
-
 a:hover{
   font-weight: 900;
   text-decoration: underline;
+}
+
+
+.nom {
+  display: grid; /* Permet d'aligner le texte au centre */
+  margin-top: 20px;
+  color:rgba(215, 194, 87, 0.981);
+  font-family: "Dancing Script", serif;
+padding-left: 30px;
+  font-size: 3.9em;
+  font-weight: 700;
+font-style: normal;
 }
 
 
