@@ -26,7 +26,7 @@
       <h3>Restaurant <br>traditionnel Italien</h3>
     </div>
 <div class="b">
-      <button class="b1" type="button">Réserver une table</button>
+      <button class ="b1" onclick="window.location.href = 'reservations_table.php';">Réserver une table</button>
     </div>
 
 
