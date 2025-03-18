@@ -74,6 +74,7 @@ h2 {
     color: white;
 }
 
+
 form {
     display: flex;
     flex-direction: column;
@@ -155,12 +156,20 @@ button:hover {
   font-style: normal;
   }
 
+  h4{
+    display: flex;
+    margin-left: 50px;
+    text-decoration: underline;
+    font-family: "Dancing Script", serif;
+    font-size: 2.5em;
+    font-weight: 700;
+  font-style: normal;
+  }
+
 body{
     background-color:  rgb(23, 22, 22);
     background-image: url(../../images/cercle.jpg);
     background-repeat: no-repeat;
     background-size: 20%;
-    background-position: 10px;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-position: left 100px;
 }
