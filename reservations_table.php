@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Réservation de table - El Casolare</title>
-    <link rel="stylesheet" href="assets/CSS/style_reservation_table.css">
+    <title>Réservation de table - Il Casolare</title>
+    <link rel="stylesheet" href="style_reservation_table.css">
 </head>
 <body>
 
@@ -18,7 +18,7 @@
         <nav></nav>
     </header>
 
-    <main class = "main-content">
+    <main class="main-content">
         <div class="container">
             <h2>Limoges</h2>
             <p class="address">Groupe 3iL, 43 Rue de Sainte-Anne, 87000 LIMOGES</p>
@@ -53,14 +53,14 @@
                 <!-- Sélection de la date -->
                 <div class="form-group">
                     <label for="date">Date :</label>
-                    <input type="date" id="date" name="date" required onchange="updateTimeSlots()">
+                    <input type="date" id="date" name="date" required onchange="loadHoraires()">
                 </div>
 
                 <!-- Sélection de l'horaire en fonction du jour -->
                 <div class="form-group">
                     <label for="time">Heure :</label>
                     <select id="time" name="time" required>
-                        <option value="">Sélectionnez une heure</option>
+                        <option value="">Sélectionnez une date d'abord</option>
                     </select>
                 </div>
 
@@ -74,11 +74,7 @@
                 <div class="form-group">
                     <label for="table">Tables disponibles :</label>
                     <select id="table" name="table" required>
-                        <option value="T01-intérieur">Intérieur - Table T01</option>
-                        <option value="T02-intérieur">Intérieur - Table T02</option>
-                        <option value="T03-intérieur">Intérieur - Table T03</option>
-                        <option value="T04-extérieur">Extérieur - Table T04</option>
-                        <option value="T05-extérieur">Extérieur - Table T05</option>
+                        <option value="">Sélectionnez une heure d'abord</option>
                     </select>
                 </div>
 
@@ -86,8 +82,54 @@
             </form>
         </section>
 
-        
-        <script src="assets/js/script_creation_table.js"></script>
+        <script>
+            function loadHoraires() {
+                var date = document.getElementById("date").value;
+                var selectHoraire = document.getElementById("time");
+                var selectTable = document.getElementById("table");
+
+                selectHoraire.innerHTML = '<option value="">Chargement...</option>';
+                selectTable.innerHTML = '<option value="">Sélectionnez une heure d\'abord</option>';
+
+                if (!date) {
+                    selectHoraire.innerHTML = '<option value="">Sélectionnez une date d\'abord</option>';
+                    return;
+                }
+
+                var xhr = new XMLHttpRequest();
+                xhr.open("GET", "get_horaires.php?date=" + encodeURIComponent(date), true);
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState == 4 && xhr.status == 200) {
+                        selectHoraire.innerHTML = xhr.responseText;
+                    }
+                };
+                xhr.send();
+            }
+
+            function loadTables() {
+                var time = document.getElementById("time").value;
+                var date = document.getElementById("date").value;
+                var selectTable = document.getElementById("table");
+
+                selectTable.innerHTML = '<option value="">Chargement...</option>';
+
+                if (!time || !date) {
+                    selectTable.innerHTML = '<option value="">Sélectionnez une heure d\'abord</option>';
+                    return;
+                }
+
+                var xhr = new XMLHttpRequest();
+                xhr.open("GET", "get_tables.php?date=" + encodeURIComponent(date) + "&time=" + encodeURIComponent(time), true);
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState == 4 && xhr.status == 200) {
+                        selectTable.innerHTML = xhr.responseText;
+                    }
+                };
+                xhr.send();
+            }
+
+            document.getElementById("time").addEventListener("change", loadTables);
+        </script>
     </main>
 
 </body>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connexion - il Casolare</title>
-    <link rel="stylesheet" href="assets\CSS\style_connexion.css">
+    <link rel="stylesheet" href="style_connexion.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
@@ -64,7 +64,7 @@
                     <label for="tel">Téléphone</label>
                     <input type="tel" id="tel" name="tel" required>
                     
-                    <button class ="b4"type="submit">Créez le compte</button>
+                    <button class ="b4" type="submit">Créez le compte</button>
                 </form>
             </section>
         </div>
