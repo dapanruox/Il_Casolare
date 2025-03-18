@@ -109,7 +109,14 @@ input {
   padding:  10px;
   font-size: 1.2em;
 }
+.b4{
+    margin-top: 10px;
+  color: white;
+  background-color: rgb(23, 22, 22);
+  padding:  10px;
+  font-size: 1.2em;
 
+}
 
 button:hover {
     background-color: rgba(54, 53, 53, 0.375);
@@ -150,9 +157,10 @@ button:hover {
 
 body{
     background-color:  rgb(23, 22, 22);
-    background-image: url(images/cercle.jpg);
+    background-image: url(../../images/cercle.jpg);
     background-repeat: no-repeat;
     background-size: 20%;
     background-position: 10px;
+    background-repeat: no-repeat;
     background-attachment: fixed;
 }
