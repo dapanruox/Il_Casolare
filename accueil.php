@@ -29,8 +29,7 @@
       <button class ="b1" onclick="window.location.href = 'reservations_table.php';">Réserver une table</button>
     </div>
 
-
-      <div class="carousel">
+    <div class="carousel">
       <div class="carousel-track">
         <img src="images/pizza.jpeg" alt="pizza" />
         <img src="images/pates.jpg" alt="pates" />
@@ -45,5 +44,3 @@
     </div>
   </body>
   </html>
-</body>
-</html>
