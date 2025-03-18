@@ -1,93 +1,92 @@
+CREATE TABLE Utilisateur(
+   Id_utilisateur INT AUTO_INCREMENT,
+   Admin BOOLEAN NOT NULL DEFAULT 0,
+   Nom VARCHAR(50) NOT NULL,
+   Mot_de_passe VARCHAR(255) NOT NULL,
+   Mail VARCHAR(100) NOT NULL UNIQUE,
+   Num_Telephone VARCHAR(20) NULL,
+   PRIMARY KEY(Id_utilisateur)
+);
+
+CREATE TABLE Table_Res(
+   Numero INT AUTO_INCREMENT,
+   Table_interieur BOOLEAN NOT NULL DEFAULT 1,
+   Nb_places_max INT NOT NULL,
+   PRIMARY KEY(Numero)
+);
+
 CREATE TABLE Plat(
-   Id_plat INT,
-   Nom VARCHAR(50),
-   Prix INT,
+   Id_plat INT AUTO_INCREMENT,
+   Nom VARCHAR(50) NOT NULL,
+   Prix INT NOT NULL,
    PRIMARY KEY(Id_plat)
 );
 
 CREATE TABLE Ingredient(
-   Id_ingredient VARCHAR(50),
-   Nom VARCHAR(50),
+   Id_ingredient INT AUTO_INCREMENT,
+   Nom VARCHAR(50) NOT NULL,
    PRIMARY KEY(Id_ingredient)
 );
 
 CREATE TABLE Horaire(
-   Id_horaire INT,
-   Jour VARCHAR(50),
-   Heure_ouverture TIME,
-   Heure_fermeture TIME,
-   Type_service VARCHAR(50),
+   Id_horaire INT AUTO_INCREMENT,
+   Jour VARCHAR(20) NOT NULL,
+   Heure_ouverture TIME NOT NULL,
+   Heure_fermeture TIME NOT NULL,
+   Type_service VARCHAR(50) NOT NULL,
    PRIMARY KEY(Id_horaire)
 );
 
-CREATE TABLE Reservation(
-   id_reservation INT,
-   Nombre_personnes INT,
-   Date_heure DATETIME,
-   PRIMARY KEY(id_reservation)
-);
-
-CREATE TABLE Utilisateur(
-   Id_utilisateur INT,
-   Admin LOGICAL,
-   Nom VARCHAR(50),
-   Mot_de_passe VARCHAR(50),
-   Mail VARCHAR(50),
-   Num_Telephone INT,
-   id_reservation INT NOT NULL,
-   PRIMARY KEY(Id_utilisateur),
-   FOREIGN KEY(id_reservation) REFERENCES Reservation(id_reservation)
-);
-
-CREATE TABLE Table_Res(
-   Numero INT,
-   Table_interieur LOGICAL,
-   Nb_places_max INT,
-   id_reservation INT NOT NULL,
-   PRIMARY KEY(Numero),
-   FOREIGN KEY(id_reservation) REFERENCES Reservation(id_reservation)
-);
-
 CREATE TABLE Restaurant(
-   Id_restaurant INT,
-   Lieu VARCHAR(50),
-   Nombre_tables_dispo INT,
-   id_reservation INT NOT NULL,
+   Id_restaurant INT AUTO_INCREMENT,
+   Lieu VARCHAR(100) NOT NULL,
+   Nombre_tables_dispo INT NOT NULL,
    Numero INT NOT NULL,
    PRIMARY KEY(Id_restaurant),
-   FOREIGN KEY(id_reservation) REFERENCES Reservation(id_reservation),
-   FOREIGN KEY(Numero) REFERENCES Table_Res(Numero)
+   FOREIGN KEY(Numero) REFERENCES Table_Res(Numero) ON DELETE CASCADE
 );
 
 CREATE TABLE Il_casolare(
-   Id INT,
+   Id INT AUTO_INCREMENT,
    Id_utilisateur INT NOT NULL,
    Id_restaurant INT NOT NULL,
    PRIMARY KEY(Id),
-   FOREIGN KEY(Id_utilisateur) REFERENCES Utilisateur(Id_utilisateur),
-   FOREIGN KEY(Id_restaurant) REFERENCES Restaurant(Id_restaurant)
+   FOREIGN KEY(Id_utilisateur) REFERENCES Utilisateur(Id_utilisateur) ON DELETE CASCADE,
+   FOREIGN KEY(Id_restaurant) REFERENCES Restaurant(Id_restaurant) ON DELETE CASCADE
+);
+
+CREATE TABLE RESERVER(
+   Id_utilisateur INT,
+   Id_restaurant INT NOT NULL,
+   Numero INT NOT NULL,
+   Nombre_personnes INT NOT NULL,
+   Date_heure DATETIME NOT NULL,
+   PRIMARY KEY(Id_utilisateur, Id_restaurant, Numero),
+   FOREIGN KEY(Id_utilisateur) REFERENCES Utilisateur(Id_utilisateur) ON DELETE CASCADE,
+   FOREIGN KEY(Id_restaurant) REFERENCES Restaurant(Id_restaurant) ON DELETE CASCADE,
+   FOREIGN KEY(Numero) REFERENCES Table_Res(Numero) ON DELETE CASCADE
 );
 
 CREATE TABLE CONCEVOIR(
    Id_restaurant INT,
    Id_plat INT,
    PRIMARY KEY(Id_restaurant, Id_plat),
-   FOREIGN KEY(Id_restaurant) REFERENCES Restaurant(Id_restaurant),
-   FOREIGN KEY(Id_plat) REFERENCES Plat(Id_plat)
+   FOREIGN KEY(Id_restaurant) REFERENCES Restaurant(Id_restaurant) ON DELETE CASCADE,
+   FOREIGN KEY(Id_plat) REFERENCES Plat(Id_plat) ON DELETE CASCADE
 );
 
 CREATE TABLE COMPOSER(
    Id_plat INT,
-   Id_ingredient VARCHAR(50),
+   Id_ingredient INT,
    PRIMARY KEY(Id_plat, Id_ingredient),
-   FOREIGN KEY(Id_plat) REFERENCES Plat(Id_plat),
-   FOREIGN KEY(Id_ingredient) REFERENCES Ingredient(Id_ingredient)
+   FOREIGN KEY(Id_plat) REFERENCES Plat(Id_plat) ON DELETE CASCADE,
+   FOREIGN KEY(Id_ingredient) REFERENCES Ingredient(Id_ingredient) ON DELETE CASCADE
 );
 
 CREATE TABLE DISPOSER(
    Id_restaurant INT,
    Id_horaire INT,
    PRIMARY KEY(Id_restaurant, Id_horaire),
-   FOREIGN KEY(Id_restaurant) REFERENCES Restaurant(Id_restaurant),
-   FOREIGN KEY(Id_horaire) REFERENCES Horaire(Id_horaire)
+   FOREIGN KEY(Id_restaurant) REFERENCES Restaurant(Id_restaurant) ON DELETE CASCADE,
+   FOREIGN KEY(Id_horaire) REFERENCES Horaire(Id_horaire) ON DELETE CASCADE
 );
