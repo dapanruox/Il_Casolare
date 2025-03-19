@@ -50,7 +50,7 @@
             </section>
     
             <section id="creation">
-                <h3>Création de Compte</h3>
+                <h4>Création de Compte</h4>
                 <form action="inscription.php" method="post">
                     <label for="email">Email :</label>
                     <input type="email" id="email" name="email" required>
