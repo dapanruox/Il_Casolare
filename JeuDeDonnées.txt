@@ -1,0 +1,47 @@
+-- Réinitialisation des tables (⚠ Attention, cela supprime les données existantes !)
+SET FOREIGN_KEY_CHECKS = 0;
+TRUNCATE TABLE Utilisateur;
+TRUNCATE TABLE Table_Res;
+TRUNCATE TABLE Plat;
+TRUNCATE TABLE Ingredient;
+TRUNCATE TABLE Horaire;
+TRUNCATE TABLE Restaurant;
+TRUNCATE TABLE Il_casolare;
+TRUNCATE TABLE RESERVER;
+TRUNCATE TABLE CONCEVOIR;
+TRUNCATE TABLE COMPOSER;
+TRUNCATE TABLE DISPOSER;
+SET FOREIGN_KEY_CHECKS = 1;
+
+-- Ajout des utilisateurs (tous les mots de passe sont hashés)
+INSERT INTO Utilisateur (Id_utilisateur, Admin, Nom, Mot_de_passe, Mail, Num_Telephone) VALUES
+(1, TRUE, 'Admin', '$2y$10$EixZaYVK1fsbw1ZfbX3OXej.J.yIUE6XcOQ8w0J9tWd6Zo.S1D7y6', 'admin@email.com', 123456789), -- "admin123"
+(2, FALSE, 'Jean Dupont', '$2y$10$X9r3t8GzU4Eogf9VYz6FQOyC5frOi6TUmIuq7Z5i6N6cP3O9vDziK', 'jean.dupont@email.com', 987654321), -- "mdp123"
+(3, FALSE, 'Marie Curie', '$2y$10$ABc1dEFgH2IjKlMNOpQRs/uVWXyz1234567890abcdefghijklm', 'marie.curie@email.com', 564738291); -- "password"
+
+-- Ajout des tables
+INSERT INTO Table_Res (Numero, Table_interieur, Nb_places_max) VALUES
+(1, TRUE, 4),
+(2, TRUE, 4),
+(3, TRUE, 6),
+(4, FALSE, 4),
+(5, FALSE, 6);
+
+-- Ajout des horaires
+INSERT INTO Horaire (Id_horaire, Jour, Heure_ouverture, Heure_fermeture, Type_service) VALUES
+(1, 'Monday', '11:30:00', '14:30:00', 'Déjeuner'),
+(2, 'Monday', '18:30:00', '22:30:00', 'Dîner'),
+(3, 'Tuesday', '11:30:00', '14:30:00', 'Déjeuner'),
+(4, 'Tuesday', '18:30:00', '22:30:00', 'Dîner'),
+(5, 'Wednesday', '11:30:00', '14:30:00', 'Déjeuner'),
+(6, 'Wednesday', '18:30:00', '22:30:00', 'Dîner');
+
+-- Ajout des restaurants
+INSERT INTO Restaurant (Id_restaurant, Lieu, Nombre_tables_dispo, Numero) VALUES
+(1, 'Limoges', 5, 1),
+(2, 'Paris', 4, 2);
+
+-- Association d'un restaurant à un utilisateur
+INSERT INTO Il_casolare (Id, Id_utilisateur, Id_restaurant) VALUES
+(1, 1, 1),
+(2, 2, 2);

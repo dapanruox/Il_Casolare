@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Réservation de table - Il Casolare</title>
+    <title>Réservation de table - El Casolare</title>
     <link rel="stylesheet" href="style_reservation_table.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -15,19 +18,24 @@
                 <h2>Réservation de Table</h2>
             </div>
         </div>
-        <nav></nav>
+        <nav>
+            <div class="liens">
+                <a href="accueil.php" style="color: white;" >Accueil</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="apropos.php" style="color: white;">A propos</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="menus.php" style="color: white;">Menus</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="creation_compte.php" style="color: white;">Connexion</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="reservations_table.php" style="color: white; font-weight: 900; text-decoration: underline;">Réserver</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="verif_admin.php" style="color: white;">Admin</a>
+        
+            </div>
+        </nav>
     </header>
 
-    <main class="main-content">
+    <main class = "main-content">
         <div class="container">
             <h2>Limoges</h2>
             <p class="address">Groupe 3iL, 43 Rue de Sainte-Anne, 87000 LIMOGES</p>
-            <p class="phone">📞 <a href="tel:+33698193659">+33 6 98 19 36 59</a></p>
-
-            <div class="buttons">
-                <a href="#" class="btn">📍 Itinéraire</a>
-                <a href="#" class="btn">🍕 Commander à emporter</a>
-            </div>
+            <p class="phone">📞 <a href="tel:+33555021205">+33 5 55 02 12 05</a></p>
 
             <button class="menu-btn">Voir la carte et les menus</button>
 
@@ -39,9 +47,9 @@
             <div class="schedule">
                 <p><strong>lundi</strong> 11:30 – 14:30, 18:30 – 22:30</p>
                 <p><strong>mardi</strong> 11:30 – 14:30, 18:30 – 22:30</p>
-                <p><strong class="highlight">mercredi</strong> 11:30 – 14:30, 18:30 – 22:30</p>
+                <p><strong>mercredi</strong> 11:30 – 14:30, 18:30 – 22:30</p>
                 <p><strong>jeudi</strong> 11:30 – 14:30, 18:30 – 22:30</p>
-                <p><strong>vendredi</strong> 11:30 – 14:30, 18:30 – 22:30</p>
+                <p><strong class ="highlight">vendredi</strong> 11:30 – 14:30, 18:30 – 22:30</p>
                 <p><strong>samedi</strong> 11:30 – 14:30, 18:30 – 22:30</p>
                 <p><strong>dimanche</strong> 11:30 – 14:30, 18:30 – 22:30</p>
             </div>
@@ -53,14 +61,14 @@
                 <!-- Sélection de la date -->
                 <div class="form-group">
                     <label for="date">Date :</label>
-                    <input type="date" id="date" name="date" required onchange="loadHoraires()">
+                    <input type="date" id="date" name="date" required onchange="updateTimeSlots()">
                 </div>
 
                 <!-- Sélection de l'horaire en fonction du jour -->
                 <div class="form-group">
                     <label for="time">Heure :</label>
                     <select id="time" name="time" required>
-                        <option value="">Sélectionnez une date d'abord</option>
+                        <option value="">Sélectionnez une heure</option>
                     </select>
                 </div>
 
@@ -74,7 +82,11 @@
                 <div class="form-group">
                     <label for="table">Tables disponibles :</label>
                     <select id="table" name="table" required>
-                        <option value="">Sélectionnez une heure d'abord</option>
+                        <option value="T01-intérieur">Intérieur - Table T01</option>
+                        <option value="T02-intérieur">Intérieur - Table T02</option>
+                        <option value="T03-intérieur">Intérieur - Table T03</option>
+                        <option value="T04-extérieur">Extérieur - Table T04</option>
+                        <option value="T05-extérieur">Extérieur - Table T05</option>
                     </select>
                 </div>
 
@@ -82,54 +94,8 @@
             </form>
         </section>
 
-        <script>
-            function loadHoraires() {
-                var date = document.getElementById("date").value;
-                var selectHoraire = document.getElementById("time");
-                var selectTable = document.getElementById("table");
-
-                selectHoraire.innerHTML = '<option value="">Chargement...</option>';
-                selectTable.innerHTML = '<option value="">Sélectionnez une heure d\'abord</option>';
-
-                if (!date) {
-                    selectHoraire.innerHTML = '<option value="">Sélectionnez une date d\'abord</option>';
-                    return;
-                }
-
-                var xhr = new XMLHttpRequest();
-                xhr.open("GET", "get_horaires.php?date=" + encodeURIComponent(date), true);
-                xhr.onreadystatechange = function () {
-                    if (xhr.readyState == 4 && xhr.status == 200) {
-                        selectHoraire.innerHTML = xhr.responseText;
-                    }
-                };
-                xhr.send();
-            }
-
-            function loadTables() {
-                var time = document.getElementById("time").value;
-                var date = document.getElementById("date").value;
-                var selectTable = document.getElementById("table");
-
-                selectTable.innerHTML = '<option value="">Chargement...</option>';
-
-                if (!time || !date) {
-                    selectTable.innerHTML = '<option value="">Sélectionnez une heure d\'abord</option>';
-                    return;
-                }
-
-                var xhr = new XMLHttpRequest();
-                xhr.open("GET", "get_tables.php?date=" + encodeURIComponent(date) + "&time=" + encodeURIComponent(time), true);
-                xhr.onreadystatechange = function () {
-                    if (xhr.readyState == 4 && xhr.status == 200) {
-                        selectTable.innerHTML = xhr.responseText;
-                    }
-                };
-                xhr.send();
-            }
-
-            document.getElementById("time").addEventListener("change", loadTables);
-        </script>
+        
+        <script src="assets/js/script_creation_table.js"></script>
     </main>
 
 </body>
