@@ -37,7 +37,7 @@
             <p class="address">Groupe 3iL, 43 Rue de Sainte-Anne, 87000 LIMOGES</p>
             <p class="phone">📞 <a href="tel:+33555021205">+33 5 55 02 12 05</a></p>
 
-            <button class="menu-btn">Voir la carte et les menus</button>
+            <a href="menus.php" class="menu-btn">Voir la carte et les menus</a>
 
             <div class="toggle-buttons">
                 <button class="toggle active">Sur place</button>

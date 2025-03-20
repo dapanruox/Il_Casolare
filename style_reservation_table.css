@@ -69,8 +69,6 @@ h1 {
 
 .menu-btn {
     display: block;
-    width: 100%;
-    padding: 10px;
     margin-top: 15px;
     background: none;
     border: 1px solid #aaa;
@@ -78,6 +76,20 @@ h1 {
     font-size: 16px;
     cursor: pointer;
     border-radius: 5px;
+
+    width: 94%;
+    padding: 12px;
+    background-color: #b22222;
+    color: white;
+    border: none;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.menu-btn:hover {
+    background-color: #8b1a1a;
+    text-decoration: none;
 }
 
 .status {
