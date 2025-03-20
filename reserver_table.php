@@ -3,7 +3,7 @@
 session_start(); 
 
 if (!isset($_SESSION['user_id']) || empty($_SESSION['user_id'])) {
-    echo json_encode(["success" => false, "message" => "Utilisateur non connecté."]);
+    echo("Veuillez vous reconnecter.");
     exit;
 }
 
@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             'date_heure' => $date . ' ' . $heure
         ]);
 
-        echo json_encode(["success" => true, "message" => "Reservation effectuee avec succes."]);
+        echo("Reservation effectuee avec succes.");
 
     } catch (Exception $e) {
         echo json_encode(["success" => false, "message" => "Erreur : " . $e->getMessage()]);
