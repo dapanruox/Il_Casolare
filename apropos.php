@@ -3,7 +3,7 @@ i<!doctype html>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Titre de la page</title>
+  <title>A Propos - Il Casolare</title>
   <link rel="stylesheet" href="pr.css">
   <script src="script.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">

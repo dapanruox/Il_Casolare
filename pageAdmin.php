@@ -18,7 +18,10 @@ if (!isset($_SESSION['user_id']) || empty($_SESSION['admin']) || $_SESSION['admi
 }
 
 // Récupération des plats
-$sql = "SELECT * FROM Plat"; // Correction du nom de la table (respecte la casse de la BDD)
+$sql = "SELECT * FROM `reserver`
+        INNER JOIN utilisateur
+        ON utilisateur.Id_utilisateur = reserver.Id_utilisateur;"; 
+
 $result = $db->query($sql);
 ?>
 
@@ -26,25 +29,29 @@ $result = $db->query($sql);
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Gestion des Produits</title>
+    <title>Gestion des Réservations</title>
 </head>
 <body>
-    <h1>Modifier les Produits</h1>
+    <h1>Modifier les Réservations</h1>
     <table border="1">
         <tr>
-            <th>ID</th>
-            <th>Nom</th>
-            <th>Prix</th>
-            <th>Action</th>
+            <th>Nom utilisateur</th>
+            <th>Id</th>
+            <th>Mail</th>
+            <th>Numéro de téléphone</th>
+            <th>Date de la réservation</th>
+            <th>N° Table</th>
+            <th>Nombre de personnes</th>
         </tr>
         <?php while ($row = $result->fetch(PDO::FETCH_ASSOC)) : ?>
             <tr>
-                <td><?= htmlspecialchars($row['Id_plat']) ?></td>
                 <td><?= htmlspecialchars($row['Nom']) ?></td>
-                <td><?= htmlspecialchars($row['Prix']) ?> €</td>
-                <td>
-                    <a href="modifier_produit.php?id=<?= htmlspecialchars($row['Id_plat']) ?>">Modifier</a>
-                </td>
+                <td><?= htmlspecialchars($row['Id_utilisateur']) ?></td>
+                <td><?= htmlspecialchars($row['Mail']) ?></td>
+                <td><?= htmlspecialchars($row['Num_Telephone']) ?></td>
+                <td><?= htmlspecialchars($row['Date_heure']) ?></td>
+                <td><?= htmlspecialchars($row['Numero']) ?></td>
+                <td><?= htmlspecialchars($row['Nombre_personnes']) ?></td>
             </tr>
         <?php endwhile; ?>
     </table>
