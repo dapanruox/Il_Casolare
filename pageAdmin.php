@@ -1,13 +1,25 @@
 <?php
+session_start();
 
-require_once 'connexion.php';
+try {
+    $db = new PDO(
+        'mysql:host=localhost;dbname=il_casolare;charset=utf8',
+        'root',
+        '',
+        [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]
+    );
+} catch (Exception $e) {
+    die('Erreur : ' . $e->getMessage());
+}
 
-if (!isset($_SESSION['user_id']) || $_SESSION['admin'] !== 'Admin') {
+// Vérification de la session et des permissions
+if (!isset($_SESSION['user_id']) || empty($_SESSION['admin']) || $_SESSION['admin'] != 1) {
     die("Accès interdit !");
 }
 
-$sql = "SELECT * FROM produits";
-$result = $connex->query($sql);
+// Récupération des plats
+$sql = "SELECT * FROM Plat"; // Correction du nom de la table (respecte la casse de la BDD)
+$result = $db->query($sql);
 ?>
 
 <!DOCTYPE html>
@@ -23,17 +35,15 @@ $result = $connex->query($sql);
             <th>ID</th>
             <th>Nom</th>
             <th>Prix</th>
-            <th>Description</th>
             <th>Action</th>
         </tr>
-        <?php while ($row = $result->fetch_assoc()) : ?>
+        <?php while ($row = $result->fetch(PDO::FETCH_ASSOC)) : ?>
             <tr>
-                <td><?= $row['id'] ?></td>
-                <td><?= htmlspecialchars($row['nom']) ?></td>
-                <td><?= $row['prix'] ?> €</td>
-                <td><?= htmlspecialchars($row['description']) ?></td>
+                <td><?= htmlspecialchars($row['Id_plat']) ?></td>
+                <td><?= htmlspecialchars($row['Nom']) ?></td>
+                <td><?= htmlspecialchars($row['Prix']) ?> €</td>
                 <td>
-                    <a href="modifier_produit.php?id=<?= $row['id'] ?>">Modifier</a>
+                    <a href="modifier_produit.php?id=<?= htmlspecialchars($row['Id_plat']) ?>">Modifier</a>
                 </td>
             </tr>
         <?php endwhile; ?>

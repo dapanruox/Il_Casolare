@@ -57,7 +57,7 @@
 
         <section class="reservation-form">
             <h2>Réservez votre table</h2>
-            <form action="#" method="POST">
+            <form action="reserver_table.php" method="POST">
                 <!-- Sélection de la date -->
                 <div class="form-group">
                     <label for="date">Date :</label>
@@ -68,7 +68,7 @@
                 <div class="form-group">
                     <label for="time">Heure :</label>
                     <select id="time" name="time" required>
-                        <option value="">Sélectionnez une heure</option>
+                        <option value="">Veuillez sélectionner une date</option>
                     </select>
                 </div>
 
@@ -95,7 +95,7 @@
         </section>
 
         
-        <script src="assets/js/script_creation_table.js"></script>
+        <script src="assets/js/script_reservation_table.js"></script>
     </main>
 
 </body>
