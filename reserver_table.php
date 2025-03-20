@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $heure = $_POST['heure'] ?? null;
 
     if (!$id_utilisateur || !$id_restaurant || !$table_numero || !$nombre_personnes || !$date || !$heure) {
-        echo json_encode(["success" => false, "message" => "Tous les champs sont obligatoires."]);
+        echo json_encode(["success" => false, "message" => "Tous les champs sont obligatoires :" ]);
         exit;
     }
 

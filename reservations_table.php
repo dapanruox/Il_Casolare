@@ -66,7 +66,7 @@
                 <!-- Sélection de l'horaire en fonction du jour -->
                 <div class="form-group">
                     <label for="time">Heure :</label>
-                    <select id="time" name="time" required>
+                    <select id="time" name="heure" required>
                         <option value="">Veuillez sélectionner une date</option>
                     </select>
                 </div>
@@ -74,7 +74,7 @@
                 <!-- Sélection du nombre de personnes -->
                 <div class="form-group">
                     <label for="guests">Nombre de personnes :</label>
-                    <input type="number" id="guests" name="guests" min="1" max="20" required>
+                    <input type="number" id="guests" name="nombre_personnes" min="1" max="20" required>
                 </div>
 
                 <!-- Sélection de la table disponible -->
@@ -88,6 +88,9 @@
                         <option value="5">Extérieur - Table T05</option>
                     </select>
                 </div>
+
+                <input type="hidden" name="id_utilisateur" value="<?php echo $_SESSION['user_id'] ?? ''; ?>">
+                <input type="hidden" name="id_restaurant" value="1">
 
                 <button type="submit">Réserver</button>
             </form>
