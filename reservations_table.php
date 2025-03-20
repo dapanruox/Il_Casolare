@@ -81,11 +81,11 @@
                 <div class="form-group">
                     <label for="table">Tables disponibles :</label>
                     <select id="table" name="table" required>
-                        <option value="T01-intérieur">Intérieur - Table T01</option>
-                        <option value="T02-intérieur">Intérieur - Table T02</option>
-                        <option value="T03-intérieur">Intérieur - Table T03</option>
-                        <option value="T04-extérieur">Extérieur - Table T04</option>
-                        <option value="T05-extérieur">Extérieur - Table T05</option>
+                        <option value="1">Intérieur - Table T01</option>
+                        <option value="2">Intérieur - Table T02</option>
+                        <option value="3">Intérieur - Table T03</option>
+                        <option value="4">Extérieur - Table T04</option>
+                        <option value="5">Extérieur - Table T05</option>
                     </select>
                 </div>
 
