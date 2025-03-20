@@ -1,9 +1,10 @@
 <?php
+session_start(); 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Vérification si les champs existent
     if (!isset($_POST['username']) || !isset($_POST['mdp'])) {
-        echo "Erreur : Les champs du formulaire sont vides..";
+        echo "Erreur : Les champs du formulaire sont vides.";
         exit;
     }
 
@@ -30,6 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['username'] = $user['Nom'];
             $_SESSION['admin'] = $user['Admin'];
 
+            
             header("Location: accueil.php");
             exit;
         } else {
