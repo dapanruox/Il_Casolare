@@ -41,7 +41,6 @@
 
             <div class="toggle-buttons">
                 <button class="toggle active">Sur place</button>
-                <button class="toggle">À emporter</button>
             </div>
 
             <div class="schedule">
