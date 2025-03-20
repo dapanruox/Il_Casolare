@@ -1,10 +1,16 @@
 <?php
-require 'connexion.php';
+
+session_start(); 
+
+if (!isset($_SESSION['user_id']) || empty($_SESSION['user_id'])) {
+    echo json_encode(["success" => false, "message" => "Utilisateur non connecté."]);
+    exit;
+}
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $id_utilisateur = $_POST['id_utilisateur'] ?? null;
-    $id_restaurant = $_POST['id_restaurant'] ?? null;
-    $table_numero = $_POST['table'] ?? null; // On récupère le numéro de table
+    $id_utilisateur = $_SESSION['user_id'] ?? null; // Récupérer l'utilisateur connecté
+    $id_restaurant = 1;
+    $table_numero = $_POST['table'] ?? null;
     $nombre_personnes = $_POST['nombre_personnes'] ?? null;
     $date = $_POST['date'] ?? null;
     $heure = $_POST['heure'] ?? null;
@@ -35,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             'date_heure' => $date . ' ' . $heure
         ]);
 
-        echo json_encode(["success" => true, "message" => "Réservation effectuée avec succès."]);
+        echo json_encode(["success" => true, "message" => "Reservation effectuee avec succes."]);
 
     } catch (Exception $e) {
         echo json_encode(["success" => false, "message" => "Erreur : " . $e->getMessage()]);
