@@ -221,3 +221,7 @@ button:hover {
     font-weight: 900;
     text-decoration: underline;
   }
+
+.pasH1{
+    font-size: 2em;
+}

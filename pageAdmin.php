@@ -30,9 +30,34 @@ $result = $db->query($sql);
 <head>
     <meta charset="UTF-8">
     <title>Admin - Il Casolare</title>
+    <link rel="stylesheet" href="style_reservation_table.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
 </head>
+
+<header>
+        <div class="flex1">
+            <div class="flex2">
+                <h1><strong>Il Casolare</strong></h1>
+                <h2>Page Admin</h2>
+            </div>
+        </div>
+        <nav>
+            <div class="liens">
+                <a href="accueil.php" style="color: white;" >Accueil</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="apropos.php" style="color: white;">A propos</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="menus.php" style="color: white;">Menus</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="creation_compte.php" style="color: white;">Connexion</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="reservations_table.php" style="color: white;">Réserver</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="verif_admin.php" style="color: white; font-weight: 900; text-decoration: underline;">Admin</a>
+        
+            </div>
+        </nav>
+</header>
+
 <body>
-    <h1>Réservations</h1>
+    <p  class="pasH1">Réservations</p>
     <table border="1">
         <tr>
             <th>Nom utilisateur</th>
