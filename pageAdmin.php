@@ -29,10 +29,10 @@ $result = $db->query($sql);
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Gestion des Réservations</title>
+    <title>Admin - Il Casolare</title>
 </head>
 <body>
-    <h1>Modifier les Réservations</h1>
+    <h1>Réservations</h1>
     <table border="1">
         <tr>
             <th>Nom utilisateur</th>
