@@ -7,7 +7,8 @@ body {
 
 
 .liens{
-  padding-left: 750px;
+    margin-top: -85px;
+  padding-left: 950px;
   font-size: 1.5em;
 }
 
@@ -127,7 +128,7 @@ h3 {
     padding-right: 20px;
 }
 .pates_quatre {
-    border: solid grey 1px;
+    border: solid gold 2px;
     padding-left: 20px;
     padding-top: 10px;
     padding-right: 20px;
@@ -151,3 +152,26 @@ h3 {
     padding-top: 10px;
     padding-right: 20px;
 }
+
+.mv{
+    color: gold;
+    display: flex;
+    justify-content: center;
+    font-family: "Dancing Script", serif;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-size: 2em;
+    text-decoration: underline;
+}
+
+
+.nom {
+    display: grid; /* Permet d'aligner le texte au centre */
+    margin-top: 20px;
+    color:gold;
+    font-family: "Dancing Script", serif;
+  padding-left: 30px;
+    font-size: 3.9em;
+    font-weight: 700;
+  font-style: normal;
+  }

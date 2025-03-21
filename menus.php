@@ -11,6 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
 </head>
 <body>
+<div class="nom">&nbsp;Il Casolare</div>
      <div class="liens">
       <a href="accueil.php" style="color: white;" >Accueil</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <a href="apropos.php" style="color: white;">A propos</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -113,6 +114,9 @@
             </p>
         </div>
         <div class="pates_quatre">
+            <div class="mv">
+            <p>Meilleure vente<p>
+</div>
             <img src="images/pates.jpg" alt="Image de pâtes penne rigate">
             <h3>Pâtes Penne Rigate</h3>
             <p>
