@@ -44,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo("Reservation effectuee avec succes.");
 
     } catch (Exception $e) {
-        echo json_encode(["success" => false, "message" => "Erreur : " . $e->getMessage()]);
+        echo("Table non disponible");
     }
 } else {
     echo json_encode(["success" => false, "message" => "Méthode non autorisée."]);
